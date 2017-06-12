@@ -4,7 +4,6 @@
   "description": "burger",
   "main": "server.js",
   "scripts": {
-    "test": "node",
     "start": "node server.js"
   },
   "repository": {
@@ -15,6 +14,9 @@
     "express",
     "node"
   ],
+  "engines": {
+    "node": "6.10.0"
+  },
   "author": "domingo",
   "license": "ISC",
   "bugs": {
