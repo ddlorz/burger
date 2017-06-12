@@ -1,7 +1,12 @@
 var express = require("express");
+var exphbs = require("express-handlebars");
 var bodyParser = require("body-parser");
 var mysql = require('mysql');
-var exphbs = require("express-handlebars");
+var path = require('path');
+var methodOverride = require('method-override');
+var moment = require('moment');
+var htmlRoutes = require('./routes/html-routes.js');
+var apiRoutes = require('./routes/api-routes.js');
 
 var app = express();
 var PORT = (process.env.PORT || 3000);
@@ -12,13 +17,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var burgers = {
-        burger: 'cheesburger'
-    };
-
-app.get('/', function(req, res) {
-    res.render('index', burgers)
-});
+htmlRoutes(app);
+apiRoutes(app);
 
 app.listen(PORT, function() {
     console.log('Listening to PORT ' + PORT);
