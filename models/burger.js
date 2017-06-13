@@ -7,7 +7,7 @@ var burger =
         orm.selectAll(queryString, function(burger_list) {
             var unDevoured = [];
             var Devoured = [];
-            for (var i = 0; i <burger_list.length; i++) {
+            for (var i = 0; i < burger_list.length; i++) {
                 if (burger_list[i].devoured === 0) {
                     unDevoured.push({burger_name: burger_list[i].burger_name});
                 }

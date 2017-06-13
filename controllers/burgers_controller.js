@@ -2,7 +2,7 @@ var burgerApp = require('../models/burger.js')
 
 module.exports = function(app) {
     app.get('/', function(req, res) {     
-        burgerApp.getAllBurger(res);
+        //burgerApp.getAllBurger(res);
     });            
     app.post('/api/add', function(req, res) {  
         var burger_name = req.body.burger_name; 
